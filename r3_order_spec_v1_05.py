@@ -324,7 +324,7 @@ def save_contract(number):
     print('hotkey "ctrl + shift + s"')
     sleep(SLEEPTIME*5)
     write(
-        rf'Y:\shared\ВРСП\Договора на ТУ\_Проекти договорів\{date}_{number}_{cust}_{str(positions_quantity)} л')
+        f'Y:\shared\ВРСП\Договора на ТУ\_Проекти договорів\{date}_{number}_{cust}_{str(positions_quantity)} л')
     sleep(SLEEPTIME*10)
     click('save_doc3.png')
     MESSAGE4 = 'Проект договору лежить в:\n "Y:\\shared\\ВРСП\\Договора на ТУ\\_Проекти договорів".'
@@ -354,7 +354,7 @@ if __name__ == '__main__':
     if edrpou is None:
         sys.exit()
 
-    CUSTOMERS = 'customers.xlsx'
+    CUSTOMERS = "customers.xlsx"
     wb = openpyxl.load_workbook(CUSTOMERS, read_only=True)
     ws = wb.active
     cust = ''
