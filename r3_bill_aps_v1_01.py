@@ -140,7 +140,6 @@ def fill_contract():
 
 def make_bill():
     """making bill"""
-    f_type = "рахунок"
     click2('make_bill1.png')
     sleep(SLEEPTIME*5)
     write(order_number)
@@ -150,12 +149,10 @@ def make_bill():
     click('make_bill3.png')
     key('f8')
     sleep(SLEEPTIME*5)
-    return f_type
 
 
 def make_aps():
     """making aps"""
-    f_type = "АНП"
     click2('make_aps1.png')
     sleep(SLEEPTIME*5)
     write(order_number)
@@ -171,7 +168,6 @@ def make_aps():
     hotkey('ctrl', 'a')
     write(SIGN2)
     key('f8')
-    return f_type
 
 
 def go_main_manu():
@@ -230,8 +226,8 @@ if __name__ == '__main__':
 
     login()
     fill_contract()
-    file_type = make_bill()
-    save_file(file_type)
+    make_bill()
+    save_file("рахунок")
     go_main_manu()
-    file_type = make_aps()
-    save_file(file_type)
+    make_aps()
+    save_file("АНП")
